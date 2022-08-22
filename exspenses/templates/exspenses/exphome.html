@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+
+
+{% block content %}
+    <div class="features">
+        <h1>Расходы</h1>
+        {% if new_exspens %}
+            {% for el in new_exspens %}
+                <div class="alert alert-warning">
+                    <h3>{{ el.name }}</h3>
+                    <h3>{{ el.category }}</h3>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>У вас нет записей!</p>
+        {% endif %}
+
+        {# Комментарий #}
+    </div>
+{% endblock %}
